@@ -2,10 +2,10 @@ import React from 'react';
 
 const Form = props => {
     return (
-            <form>
-            <label for="item">Add to list: </label>
-            <input name="todo" placeholder="Add item" value={props.textInput} onChange={props.inputHandler} />
-            <button type="submit">Add</button>
+            <form onSubmit={props.addHandler}>
+            <input name="todo" placeholder="I need to..." value={props.textInput} onChange={props.inputHandler} />
+            <button type="submit" onClick={props.addHandler}>Add</button>
+            <button>Clear Completed</button>
             </form>
     )
 }
