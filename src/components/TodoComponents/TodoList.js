@@ -6,7 +6,9 @@ const List = props => {
     return(
         <div 
             onClick={()=>props.toggleHandler(props.item.id)}
-            style = {props.item.completed ? {textDecoration: 'none'} : {textDecoration: 'lineThrough'}}
+            style={{
+                textDecoration: props.item.complete ? 'line-through' : 'none',
+              }}
         >
             <p>{props.item.todo}</p>
             

@@ -77,7 +77,6 @@ class App extends React.Component {
             inputHandler={this.inputHandler}
             addHandler={this.addHandler}
           />
-          {console.log(this.state.toDoList)}
         </div>
       </div>
     );
