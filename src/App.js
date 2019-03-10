@@ -56,6 +56,14 @@ class App extends React.Component {
     })
   }
 
+  clearHandler = e => {
+    e.preventDefault();
+    console.log("Clear clicked");
+    this.setState({
+      toDoList: this.state.toDoList.filter(item => !item.complete)
+    })
+  }
+
 
 
   // you will need a place to store your state in this component.
@@ -76,6 +84,7 @@ class App extends React.Component {
             textInput={this.state.textInput}
             inputHandler={this.inputHandler}
             addHandler={this.addHandler}
+            clearHandler={this.clearHandler}
           />
         </div>
       </div>
