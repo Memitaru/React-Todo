@@ -4,8 +4,12 @@ import React from 'react';
 
 const List = props => {
     return(
-        <div>
+        <div 
+            onClick={()=>props.toggleHandler(props.item.id)}
+            style = {props.item.completed ? {textDecoration: 'none'} : {textDecoration: 'lineThrough'}}
+        >
             <p>{props.item.todo}</p>
+            
         </div>
     )
 }

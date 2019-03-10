@@ -41,6 +41,23 @@ class App extends React.Component {
     });
   };
 
+  toggleHandler = id => {
+    this.setState({
+      toDoList: this.state.toDoList.map(item => {
+        if (id === item.id) {
+          return {
+            todo: item.todo,
+            id: item.id,
+            complete: !item.complete
+          }
+        }
+        return item;
+      })
+    })
+  }
+
+
+
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
   // this component is going to take care of state, and any change handlers you need to work with your state
@@ -50,7 +67,7 @@ class App extends React.Component {
         <h2>To-Do</h2>
         <div>
           {this.state.toDoList.map(item => (
-            <List item={item} />
+            <List item={item} toggleHandler={this.toggleHandler} />
           ))}
         </div>
         <div>
@@ -60,6 +77,7 @@ class App extends React.Component {
             inputHandler={this.inputHandler}
             addHandler={this.addHandler}
           />
+          {console.log(this.state.toDoList)}
         </div>
       </div>
     );
